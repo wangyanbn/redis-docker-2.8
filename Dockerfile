@@ -40,7 +40,7 @@ RUN set -ex; \
 		libc6-dev \
 		make \
 	'; \
-#	apt-get update; \
+	apt-get update; \
 	apt-get install -y $buildDeps --no-install-recommends; \
 	rm -rf /var/lib/apt/lists/*; \
 	\
