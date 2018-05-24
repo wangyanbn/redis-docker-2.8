@@ -21,9 +21,9 @@ RUN set -ex; \
 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; \
 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; \
 	chmod +x /usr/local/bin/gosu; \
-	gosu nobody true; \
-	\
-	apt-get purge -y --auto-remove $fetchDeps
+	gosu nobody true
+    #; \
+	#\
 
 ENV REDIS_VERSION 3.2.11
 ENV REDIS_DOWNLOAD_URL https://codeload.github.com/antirez/redis/tar.gz/2.8.24
@@ -65,7 +65,8 @@ RUN set -ex; \
 	\
 	rm -r /usr/src/redis; \
 	\
-	apt-get purge -y --auto-remove $buildDeps
+	apt-get purge -y --auto-remove $buildDeps; \
+	apt-get purge -y --auto-remove $fetchDeps
 
 RUN mkdir /data && chown redis:redis /data
 VOLUME /data
