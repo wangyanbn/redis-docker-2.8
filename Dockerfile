@@ -25,7 +25,7 @@ RUN set -ex; \
     #; \
 	#\
 
-ENV REDIS_VERSION 3.2.11
+ENV REDIS_VERSION 2.8.24
 ENV REDIS_DOWNLOAD_URL https://codeload.github.com/antirez/redis/tar.gz/2.8.24
 #http://download.redis.io/releases/redis-3.2.11.tar.gz
 ENV REDIS_DOWNLOAD_SHA f4c8e346e46a84daa3050db4f11123c66cee0346f6af7f4ff739072889e4e3fb
